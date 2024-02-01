@@ -136,3 +136,12 @@ handleVideoStream(document.querySelector("#video") as HTMLButtonElement);
 handleScreenStream(document.querySelector("#screen") as HTMLButtonElement);
 
 handleAudioStream(document.querySelector("#audio") as HTMLButtonElement);
+
+client.room.on("new-peer-joined", () => {
+  client.room.remotePeers.forEach((peer) => {
+    // metadata
+    console.log(peer.metadata);
+    // role
+    console.log(peer.role);
+  });
+});
